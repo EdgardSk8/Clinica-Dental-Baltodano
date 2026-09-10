@@ -49,17 +49,18 @@ document.addEventListener('DOMContentLoaded', async () => {
             redes = datosRedes;
         }
 
-        generarPresentacion( usuario, ciudad || {} ); // PRESENTACIÓN
+        Presentacion( usuario, ciudad || {} ); // PRESENTACIÓN
         DatosUsuarios( usuario, ciudad || {} ); // DATOS DEL USUARIO
         generarUbicacion(ciudad || {} ); // UBICACIÓN
         RedesSociales( redes || {} ); // REDES SOCIALES
+        MostrarNombreUsuario(usuario);
 
     } catch (error) { console.error(error); mostrarError(error.message); }
 
 });
 
 // GENERAR PRESENTACIÓN
-function generarPresentacion(usuario, ciudad) {
+function Presentacion(usuario, ciudad) {
 
     const contenedor =document.getElementById('presentacion_contenido');
     if (!contenedor) {return;} contenedor.innerHTML = '';
@@ -115,6 +116,18 @@ function convertirNombreCampo(campo) {
     const nombres = { nombre: 'Nombre', cedula: 'Cédula', email: 'Email', telefono1: 'Teléfono', telefono2: 'Teléfono 2' };
     if ( nombres[campo] ) { return nombres[campo]; }
     return campo .replace(/_/g, ' ').replace(/([a-z])([A-Z])/g, '$1 $2').replace( /\b\w/g, letra => letra.toUpperCase());
+}
+
+// MOSTRAR NOMBRE DE USUARIO
+function MostrarNombreUsuario(usuario) {
+
+    const elemento = document.getElementById('nombreusuario');
+
+    if (!elemento) {
+        return;
+    }
+
+    elemento.textContent = usuario?.nombre || '';
 }
 
 // MOSTRAR ERROR
