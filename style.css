@@ -1,105 +1,46 @@
-
-/* =========================================================
-   CLÍNICA DENTAL BAQUEDANO
-   Tema: Minimalista / Dental / Elegante
-========================================================= */
-
 :root {
-    /* =====================================================
-       COLORES DE MARCA
-    ===================================================== */
-
     --primary: #E189AD;
     --primary-dark: #C96F94;
     --primary-soft: rgba(225, 137, 173, 0.10);
-    --primary-softer: rgba(225, 137, 173, 0.055);
-
+    
     --accent: #08BBAF;
     --accent-dark: #078F86;
     --accent-soft: rgba(8, 187, 175, 0.12);
 
-    /* =====================================================
-       SUPERFICIES
-    ===================================================== */
-
     --bg-main: #FFFFFF;
     --surface: #FFFFFF;
-    --surface-soft: #FAF8FA;
     --surface-tint: #FBF2F6;
-
-    /* =====================================================
-       TEXTOS
-    ===================================================== */
 
     --text-main: #33242B;
     --text-secondary: #75646B;
     --text-muted: #93878C;
-    --text-inverse: #FFFFFF;
-
-    /* =====================================================
-       BORDES / SOMBRAS
-    ===================================================== */
 
     --border: rgba(51, 36, 43, 0.08);
     --border-soft: rgba(225, 137, 173, 0.12);
 
-    --shadow-sm:
-        0 4px 18px rgba(51, 36, 43, 0.055);
-
-    --shadow-hover:
-        0 10px 28px rgba(51, 36, 43, 0.09);
+    --shadow-sm: 0 4px 18px rgba(51, 36, 43, 0.055);
+    --shadow-hover: 0 10px 28px rgba(51, 36, 43, 0.09);
 }
 
-
 /* =========================================================
-   GENERALES
+   GENERALES Y SCROLLBAR
 ========================================================= */
 
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 22px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) #F1F5F4;
 }
 
 body {
     margin: 0;
     background: var(--bg-main);
     color: var(--text-main);
-    font-family:
-        system-ui,
-        -apple-system,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
-
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-size: 0.875rem;
     line-height: 1.6;
-
     -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-}
-
-.fs-7 {
-    font-size: 0.68rem !important;
-}
-
-.fs-8 {
-    font-size: 0.78rem !important;
-}
-
-.tracking-wider {
-    letter-spacing: 0.08em;
-}
-
-
-/* =========================================================
-   SCROLLBAR
-========================================================= */
-
-html {
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary) #F1F5F4;
 }
 
 ::-webkit-scrollbar {
@@ -119,6 +60,14 @@ html {
     background: var(--primary-dark);
 }
 
+/* Utilidades tipográficas y de color */
+.fs-7 { font-size: 0.68rem !important; }
+.tracking-wider { letter-spacing: 0.08em; }
+.custom-primary { color: var(--primary) !important; }
+.custom-accent { color: var(--accent) !important; }
+.custom-text-secondary { color: var(--text-secondary); }
+.custom-text-muted { color: var(--text-muted); }
+.custom-heading, .custom-brand { color: var(--text-main); }
 
 /* =========================================================
    NAVBAR
@@ -129,14 +78,10 @@ html {
     border-bottom: 1px solid var(--border);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-
-    transition:
-        background-color 0.2s ease,
-        box-shadow 0.2s ease;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .custom-brand {
-    color: var(--text-main) !important;
     font-size: 0.88rem;
 }
 
@@ -146,18 +91,16 @@ html {
 
 .custom-nav-link {
     position: relative;
-    color: var(--text-secondary) !important;
+    color: var(--primary) !important;
     font-size: 1rem;
     font-weight: 600;
     text-align: center;
-
-    transition:
-        color 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 .custom-nav-link:hover,
 .custom-nav-link:focus {
-    color: var(--primary) !important;
+    color: var(--accent-dark) !important;
 }
 
 .custom-toggler-icon {
@@ -165,232 +108,105 @@ html {
     font-size: 1.05rem;
 }
 
-
-/* =========================================================
-   LOGOS / ELEMENTOS BRAND
-========================================================= */
-
 .custom-primary-subtle {
-    /* background-color: var(--primary-soft); */
     color: var(--primary);
 }
 
-.custom-card-logo-bg {
-    background-color: var(--primary-soft);
-    border: 1px solid var(--border-soft);
-}
-
 /* =========================================================
-   TEXTOS
+   SECCIONES Y HERO
 ========================================================= */
-
-.custom-text,
-.custom-heading,
-.custom-brand {
-    color: var(--text-main);
-}
-
-.custom-text-secondary {
-    color: var(--text-secondary);
-}
-
-.custom-text-muted {
-    color: var(--text-muted);
-}
-
-.custom-primary {
-    color: var(--primary) !important;
-}
-
-.custom-accent {
-    color: var(--accent) !important;
-}
-
-
-/* =========================================================
-   SECCIONES
-========================================================= */
-
 
 .custom-section-inicio {
     position: relative;
-    background:
-        radial-gradient(
-            circle at 15% 25%,
-            rgba(8, 187, 175, 0.075),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 88% 78%,
-            rgba(225, 137, 173, 0.065),
-            transparent 27%
-        ),
+    background: 
+        radial-gradient(circle at 15% 25%, rgba(8, 187, 175, 0.075), transparent 28%),
+        radial-gradient(circle at 88% 78%, rgba(225, 137, 173, 0.065), transparent 27%),
         #FFFFFF;
 }
-
-.custom-section-datos {
-    background:
-        linear-gradient(
-            180deg,
-            #FFFFFF 0%,
-            #F9FCFC 100%
-        );
-}
-
-.custom-section-ubicacion {
-    background:
-        linear-gradient(
-            180deg,
-            #F2FBFA 0%,
-            #FFFFFF 100%
-        );
-
-    color: var(--text-main);
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
 
 .custom-section-inicio::before {
     content: "";
     position: absolute;
-
     width: 280px;
     height: 280px;
-
     top: 12%;
     right: -150px;
-
     border-radius: 50%;
-
     background: var(--accent-soft);
-
     pointer-events: none;
 }
 
 .custom-section-inicio::after {
     content: "";
-
     position: absolute;
-
     width: 220px;
     height: 220px;
-
     bottom: 8%;
     left: -130px;
-
     border-radius: 50%;
-
     background: var(--primary-soft);
-
     pointer-events: none;
 }
 
 .custom-section-inicio h1 {
-    color: var(--text-main);
     letter-spacing: -0.025em;
 }
 
-.custom-section-inicio p {
-    color: var(--text-secondary);
+.custom-section-datos {
+    background: linear-gradient(180deg, #FFFFFF 0%, #F9FCFC 100%);
 }
 
-
 /* =========================================================
-   BOTÓN PRINCIPAL
+   BOTONES
 ========================================================= */
 
 .custom-btn-primary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     background: var(--primary);
     border: 1px solid var(--primary);
-
     color: #FFFFFF;
-
     font-size: 0.82rem;
     font-weight: 700;
-
     padding: 0.72rem 1.25rem !important;
-
-    box-shadow:
-        0 7px 18px rgba(8, 187, 175, 0.18);
-
-    transition:
-        transform 0.2s ease,
-        background-color 0.2s ease,
-        box-shadow 0.2s ease;
+    box-shadow: 0 7px 18px rgba(8, 187, 175, 0.18);
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .custom-btn-primary:hover {
     background: var(--primary-dark);
     border-color: var(--primary-dark);
     color: #FFFFFF;
-
     transform: translateY(-1px);
-
-    box-shadow:
-        0 10px 24px rgba(8, 187, 175, 0.22);
+    box-shadow: 0 10px 24px rgba(8, 187, 175, 0.22);
 }
-
-.custom-btn-primary i {
-    font-size: 0.72rem;
-}
-
 
 /* =========================================================
-   TARJETAS DE DATOS
+   TARJETAS DE DATOS DE PACIENTE
 ========================================================= */
 
 .custom-card {
     background: #FFFFFF;
     border: 1px solid var(--border) !important;
-
     box-shadow: var(--shadow-sm) !important;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        border-color 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .custom-card:hover {
     transform: translateY(-2px);
-
-    border-color:
-        rgba(8, 187, 175, 0.18) !important;
-
-    box-shadow:
-        var(--shadow-hover) !important;
+    border-color: rgba(8, 187, 175, 0.18) !important;
+    box-shadow: var(--shadow-hover) !important;
 }
 
-.icon-box-sm,
-.custom-icon-bg {
+.icon-box-sm {
     width: 34px !important;
     height: 34px !important;
-
     background: var(--primary-soft);
-
-    border: 1px solid
-        rgba(8, 187, 175, 0.10);
-
+    border: 1px solid rgba(8, 187, 175, 0.10);
     color: var(--primary);
-
     flex-shrink: 0;
 }
-
-.custom-card .icon-box-sm i {
-    font-size: 0.82rem;
-}
-
-
-/* =========================================================
-   REDES SOCIALES
-========================================================= */
 
 .custom-social-card {
     background: #FFFFFF !important;
@@ -460,29 +276,6 @@ html {
 }
 
 
-/* =========================================================
-   UBICACIÓN
-========================================================= */
-
-.custom-section-ubicacion h2 {
-    color: var(--text-main);
-}
-
-.custom-section-ubicacion .custom-text-muted,
-.custom-section-ubicacion p {
-    color: var(--text-secondary) !important;
-}
-
-.custom-section-ubicacion strong,
-.custom-section-ubicacion span {
-    color: var(--text-main);
-}
-
-
-/* =========================================================
-   DETALLES DE CONTACTO
-========================================================= */
-
 #ubicacion_datos {
     color: var(--text-secondary);
 }
@@ -496,6 +289,24 @@ html {
 #ubicacion_datos > div:last-child {
     border-bottom: 0;
 }
+
+.custom-footer {
+    background: var(--primary-dark);
+    color: rgba(255, 255, 255, 0.82);
+
+    border: 0;
+}
+
+.custom-footer-border {
+    border-top:
+        1px solid rgba(255, 255, 255, 0.15);
+}
+
+.custom-footer span {
+    font-size: 0.72rem;
+}
+
+
 
 
 /* =========================================================
@@ -515,63 +326,81 @@ html {
         0 5px 20px rgba(36, 51, 49, 0.07);
 }
 
-
 /* =========================================================
-   FOOTER
+   TABLA DE BENEFICIOS
 ========================================================= */
 
-.custom-footer {
-    background: var(--primary-dark);
-    color: rgba(255, 255, 255, 0.82);
-
-    border: 0;
+.tabla-beneficios {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: var(--surface);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+    color: var(--text-main);
 }
 
-.custom-footer-border {
-    border-top:
-        1px solid rgba(255, 255, 255, 0.15);
+.tabla-beneficios h2 {
+    color: var(--primary-dark);
+    text-align: center;
+    margin: 0 0 20px;
+    font-size: 1.4rem;
 }
 
-.custom-footer span {
-    font-size: 0.72rem;
+.beneficios-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-
-/* =========================================================
-   TRANSICIONES
-========================================================= */
-
-.transition-hover {
-    transition:
-        transform 0.2s ease,
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
+.beneficio-item {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: var(--shadow-sm);
 }
 
+.beneficio-item h3 {
+    margin: 0 0 14px;
+    color: var(--primary-dark);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.beneficio-datos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.beneficio-datos div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.beneficio-datos span {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.beneficio-datos strong {
+    font-size: 0.88rem;
+    color: var(--text-main);
+    font-weight: 600;
+}
 
 /* =========================================================
    RESPONSIVE
 ========================================================= */
 
 @media (max-width: 767.98px) {
-
     body {
         font-size: 0.84rem;
-    }
-
-    .custom-navbar {
-        padding-top: 0.45rem !important;
-        padding-bottom: 0.45rem !important;
-    }
-
-    .custom-brand {
-        max-width: 78%;
-        font-size: 0.82rem;
-    }
-
-    .custom-section-inicio {
-        padding-left: 1.25rem !important;
-        padding-right: 1.25rem !important;
     }
 
     .custom-section-inicio h1 {
@@ -579,53 +408,31 @@ html {
         line-height: 1.18;
     }
 
-    .custom-section-inicio p {
-        font-size: 0.86rem;
+    .beneficio-datos {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .custom-section-inicio
-    > div
-    > div:first-child {
-        width: 82px !important;
-        height: 82px !important;
-        margin-bottom: 1.5rem !important;
-    }
-
-    #datos .container,
-    #ubicacion .container {
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
-    }
-
-    .custom-card {
-        padding: 0.85rem !important;
-    }
-
-    .custom-social-card {
-        padding:
-            0.5rem 0.75rem !important;
-    }
-
-    .custom-section-ubicacion {
-        padding-top: 4rem !important;
-        padding-bottom: 4rem !important;
+    .tabla-beneficios {
+        padding: 16px;
     }
 }
 
+@media (max-width: 576px) {
+    .beneficio-datos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
 
 /* =========================================================
-   REDUCIR MOVIMIENTO PARA ACCESIBILIDAD
+   ACCESIBILIDAD (REDUCIR MOVIMIENTO)
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-
     html {
         scroll-behavior: auto;
     }
-
-    *,
-    *::before,
-    *::after {
+    *, *::before, *::after {
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
     }
