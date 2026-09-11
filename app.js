@@ -119,14 +119,9 @@ function convertirNombreCampo(campo) {
 }
 
 // MOSTRAR NOMBRE DE USUARIO
-function MostrarNombreUsuario(usuario) {
-
+function MostrarNombreUsuario(usuario) { //Nombre en presentacion
     const elemento = document.getElementById('nombreusuario');
-
-    if (!elemento) {
-        return;
-    }
-
+    if (!elemento) {return;}
     elemento.textContent = usuario?.nombre || '';
 }
 
